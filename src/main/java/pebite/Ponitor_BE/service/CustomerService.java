@@ -19,8 +19,18 @@ public class CustomerService {
         return customerRepository.save(requestDto.toEntity()).getCustomerId();
     }
 
+//    @Transactional
+//    public Long update(Long customerId, CustomerUpdateRequestDto requestDto){
+//        Customer customer = customerRepository.findById(customerId)
+//                .orElseThrow(()-> new IllegalArgumentException("해당 고객이 존재하지 않습니다. customer_id = "+customerId));
+//
+//        customer.update(requestDto.getEndTime());
+//        return customerId;
+//    }
+
     @Transactional
-    public Long update(Long customerId, CustomerUpdateRequestDto requestDto){
+    public Long update(CustomerUpdateRequestDto requestDto) {
+        Long customerId = requestDto.getCustomerId();
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(()-> new IllegalArgumentException("해당 고객이 존재하지 않습니다. customer_id = "+customerId));
 
@@ -33,4 +43,5 @@ public class CustomerService {
                 .orElseThrow(() -> new IllegalArgumentException("해당 고객이 존재하지 않습니다. customer_id = " + customerId));
         return new CustomerResponseDto(entity);
     }
+
 }

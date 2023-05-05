@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDateTime;
 
-@ToString
+
 @Getter
 @NoArgsConstructor
 public class CustomerSaveRequestDto {

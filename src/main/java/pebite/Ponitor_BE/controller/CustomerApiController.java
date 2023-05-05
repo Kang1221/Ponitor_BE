@@ -13,13 +13,19 @@ public class CustomerApiController {
 
     private final CustomerService customerService;
 
-    @PostMapping("/users/lists") //insert
+    @PostMapping("/users/{username}/lists") //insert
     public Long save(@RequestBody CustomerSaveRequestDto requestDto){
         return customerService.save(requestDto);
     }
 
-    @PutMapping("/users/lists")//update
-    public Long update(@PathVariable Long customerId, @RequestBody CustomerUpdateRequestDto requestDto){
-        return customerService.update(customerId, requestDto);
+//    @PutMapping("/users/{username}/lists")//update
+//    public Long update(@PathVariable Long customerId, @RequestBody CustomerUpdateRequestDto requestDto){
+//        return customerService.update(customerId, requestDto);
+//    }
+
+    @PutMapping("/users/{username}/lists")//update
+    public Long update(@RequestBody CustomerUpdateRequestDto requestDto){
+        return customerService.update(requestDto);
     }
+
 }
