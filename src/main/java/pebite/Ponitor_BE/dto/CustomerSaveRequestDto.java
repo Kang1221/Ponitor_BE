@@ -3,15 +3,16 @@ package pebite.Ponitor_BE.dto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Service;
 import pebite.Ponitor_BE.model.Customer;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 import java.time.LocalDateTime;
+
 
 
 @Getter
@@ -26,19 +27,24 @@ public class CustomerSaveRequestDto {
 
     private String atmId;
 
+    private boolean victim;
+
     @Builder
-    public CustomerSaveRequestDto(LocalDateTime startTime,LocalDateTime endTime, String atmId){
+    public CustomerSaveRequestDto(LocalDateTime startTime,LocalDateTime endTime, String atmId, boolean victim){
         this.startTime = startTime;
         this.endTime = endTime;
         this.atmId = atmId;
+        this.victim= victim;
+
     }
 
     public Customer toEntity(){
         return Customer.builder()
                 .startTime(startTime)
                 .endTime(endTime)
-                .atmId(atmId).
-                build();
+                .atmId(atmId)
+                .victim(victim)
+                .build();
     }
 }
 

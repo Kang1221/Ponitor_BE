@@ -9,11 +9,9 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 public class CustomerUpdateRequestDto {
-    private Long customerId;
     private LocalDateTime endTime;
     @Builder
-    public CustomerUpdateRequestDto( Long customerId, LocalDateTime endTime){
-        this.customerId= customerId;
+    public CustomerUpdateRequestDto( LocalDateTime endTime){
         this.endTime = endTime;
     }
 }

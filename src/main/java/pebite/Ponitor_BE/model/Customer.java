@@ -26,11 +26,15 @@ public class Customer {
     @Column(length = 500, nullable = false)  //atm 번호, not NULL
     private String atmId;
 
+    @Column( nullable = true)
+    private boolean victim;
+
     @Builder
-    public Customer(LocalDateTime startTime, LocalDateTime endTime, String atmId){
+    public Customer(LocalDateTime startTime, LocalDateTime endTime, String atmId, boolean victim){
         this.startTime = startTime;
         this.endTime = endTime;
         this.atmId = atmId;
+        this.victim = victim;
     }
 
     public void update(LocalDateTime endTime){
