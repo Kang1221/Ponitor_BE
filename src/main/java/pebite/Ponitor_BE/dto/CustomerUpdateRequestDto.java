@@ -14,4 +14,5 @@ public class CustomerUpdateRequestDto {
     public CustomerUpdateRequestDto( LocalDateTime endTime){
         this.endTime = endTime;
     }
+
 }

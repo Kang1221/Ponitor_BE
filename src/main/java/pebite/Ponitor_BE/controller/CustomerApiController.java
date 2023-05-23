@@ -20,7 +20,6 @@ public class CustomerApiController {
         return customerService.save(requestDto);
     }
 
-
     @PutMapping("/customer/{customerId}")//update
     public Long update(@PathVariable Long customerId, @RequestBody CustomerUpdateRequestDto requestDto){
         return customerService.update(customerId, requestDto);
