@@ -36,46 +36,6 @@ public class SendImageApiController {
         tmpResultResponseDto responseDto = sendImageService.sendImage(imageFile, customerId);
         //responseDto = sendImageService.sendImage(imageFile, customerId);
 
-        //requestDto 값 넣어주기
-//        ResultUpdateRequestDto requestDto = new ResultUpdateRequestDto();
-//
-//        List<String> emotions = responseDto.getEmotions();
-//
-//        System.out.println("result 값 확인할게용");
-//        System.out.println(result.getAnger());
-//
-//        if(emotions.contains("anger"))
-//            requestDto.setAnger(result.getAnger()+1L);
-//        else
-//            requestDto.setAnger(result.getAnger());
-//
-//        if(emotions.contains("annoyance"))
-//            requestDto.setAnnoyance(result.getAnnoyance()+1L);
-//        else
-//            requestDto.setAnnoyance(result.getAnnoyance());
-//        if(emotions.contains("disapproval"))
-//            requestDto.setDisapproval(result.getDisapproval()+1L);
-//        else
-//            requestDto.setDisapproval(result.getDisapproval());
-//        if(emotions.contains("disquietment"))
-//            requestDto.setDisquietment(result.getDisquietment()+1L);
-//        else
-//            requestDto.setDisquietment(result.getDisquietment());
-//        if(emotions.contains("confusion"))
-//            requestDto.setConfusion(result.getConfusion()+1L);
-//        else
-//            requestDto.setConfusion(result.getConfusion());
-//        if(emotions.contains("sadness"))
-//            requestDto.setSadness(result.getSadness()+1L);
-//        else
-//            requestDto.setSadness(result.getSadness());
-//        if(emotions.contains("suffering"))
-//            requestDto.setSuffering(result.getSuffering()+1L);
-//        else
-//            requestDto.setSuffering(result.getSuffering());
-//        if(emotions.contains("total"))
-//            requestDto.setTotal(result.getTotal() + responseDto.getTotal());
-
 
        // resultService.update(responseDto.getCustomerId(), requestDto);
         resultService.update(responseDto);
